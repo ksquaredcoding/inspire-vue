@@ -14,4 +14,7 @@ export const AppState = reactive({
   /** @type {import('./models/Todo.js').Todo[]} */
   todos: [],
   todoListOwner: null,
+  currentTime: '',
+  currentTimeMilitary: '',
+  timeFormat: 'standard',
 })
