@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js"
-import { BackgroundImage } from "../Models/BackgroundImage.js"
+import { BackgroundImage } from "../models/BGImg.js"
 import { sandboxServer } from "./AxiosService.js"
 
 
@@ -7,7 +7,7 @@ import { sandboxServer } from "./AxiosService.js"
 class BackgroundImagesService {
   async getBackground() {
     const res = await sandboxServer.get('images')
-    AppState.backgroundImage = new BGImg(res.data)
+    AppState.backgroundImage = new BackgroundImage(res.data)
   }
 }
 
