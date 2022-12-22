@@ -1,9 +1,18 @@
 <template>
-  <section class="bgImage">
-    <div class="container d-flex align-items-center justify-content-center">
-      <img :src="bgImg?.url" alt="">
-      <Clock />
-      <button type="button" class="btn btn-primary" @click="changeTimeFormat()"> Change Time Format</button>
+  <section class="bgImage container-fluid">
+    <div class="row justify-content-between">
+      <div class="text-shadow p-2 m-2 col-3 text-start">
+        <p class="fs-3"><strong>Image By: {{ copyright }}</strong></p>
+      </div>
+      <div class="col-3 text-end">
+        <p>weather</p>
+      </div>
+    </div>
+    <div class="row align-items-center text-center">
+      <Clock class="col-12" />
+      <div>
+        <button type="button" class="btn btn-primary" @click="changeTimeFormat()"> Change Time Format</button>
+      </div>
     </div>
   </section>
 </template>
@@ -38,7 +47,8 @@ export default {
           AppState.timeFormat = 'standard'
         }
       },
-      bgImg: computed(() => AppState.backgroundImage?.url)
+      bgImg: computed(() => `url(${AppState.backgroundImage?.url})`),
+      copyright: computed(() => AppState.backgroundImage?.copyright)
     };
   },
   components: { Clock }
@@ -53,10 +63,12 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  width: 100vw;
 }
 
-img {
-  height: 200px;
-  width: 200px;
+.top-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 </style>
