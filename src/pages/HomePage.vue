@@ -2,7 +2,7 @@
   <section class="bgImage container-fluid">
     <div class="row justify-content-between">
       <div class="text-shadow p-2 m-2 col-3 text-start">
-        <p class="fs-3"><strong>Image By: {{ copyright }}</strong></p>
+        <p class="fs-4"><strong>Image By: {{ copyright }}</strong></p>
       </div>
       <div class="col-3 text-end">
         <p>weather</p>
