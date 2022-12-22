@@ -4,7 +4,7 @@
       <div class="text-shadow p-2 m-2 col-3 text-start">
         <p class="fs-4"><strong>Image By: {{ copyright }}</strong></p>
       </div>
-      <div class="col-3 text-end">
+      <div class="col-3 text-end text-shadow">
         <p>weather</p>
       </div>
     </div>
