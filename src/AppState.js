@@ -18,4 +18,5 @@ export const AppState = reactive({
   currentTimeMilitary: '',
   timeFormat: 'standard',
   timeInterval: null,
+  tempUnit: 'F'
 })
