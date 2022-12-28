@@ -3,7 +3,7 @@
     <div class="d-flex flex-column text-shadow">
       <p v-if="this.tempUnit == 'F'">{{ weather?.fahrenheit }}&deg; {{ this.tempUnit }}</p>
       <p v-else-if="this.tempUnit == 'C'">{{ weather?.celsius }}&deg; {{ this.tempUnit }}</p>
-      <p v-else>{{ weather?.temp }}&deg; {{ this.tempUnit }}</p>
+      <p v-else>{{ Math.round(weather?.temp) }}&deg; {{ this.tempUnit }}</p>
       <p>{{ weather?.getWeatherDesc() }}</p>
       <img :src="weather?.img" :alt="weather?.desc">
     </div>
@@ -18,7 +18,7 @@ import { AppState } from "../AppState.js"
 
 export default {
   props: {
-    weather: { type: Weather, required: true }
+    weather: { type: Object, required: true }
   },
   setup(props) {
     return {
