@@ -13,7 +13,7 @@ export default {
   setup() {
     function standardClock() {
       let now = new Date()
-      AppState.currentTime = now.toLocaleTimeString()
+      AppState.currentTime = now.toLocaleTimeString('en-us', { hour: "2-digit", minute: "2-digit", second: "2-digit" })
     }
     function militaryClock() {
       let now = new Date()
@@ -24,7 +24,7 @@ export default {
         ampm = ' AM'
       }
       AppState.currentTime = now.toLocaleTimeString('en-us', {
-        hour12: false,
+        hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit"
       }) + ampm
     }
     watchEffect(() => {
