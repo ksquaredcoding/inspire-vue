@@ -1,15 +1,17 @@
 <template>
   <section class="bgImage container-fluid">
     <div class="row justify-content-between">
-      <div class="text-shadow p-2 m-2 col-3 text-start">
+      <div class="text-shadow p-2 m-2 col-md-3 text-start">
         <p class="fs-4"><strong>Image By: {{ copyright }}</strong></p>
       </div>
-      <Weather class="col-3 m-2 selectable" :weather="this.weather" v-if="this.weather?.desc" />
+      <Weather class="col-2 m-2 selectable" :weather="this.weather" v-if="this.weather?.desc" />
     </div>
-    <div class="row align-items-center text-center">
-      <Clock class="col-12" />
-      <div>
-        <button type="button" class="btn btn-primary" @click="changeTimeFormat()"> Change Time Format</button>
+    <div class="row align-items-center justify-content-center text-center p-2">
+      <div class="col-12 clock-card p-3">
+        <Clock />
+        <div>
+          <button type="button" class="btn btn-primary" @click="changeTimeFormat()"> Change Time Format</button>
+        </div>
       </div>
     </div>
   </section>
@@ -79,5 +81,11 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+.clock-card {
+  background-color: rgba(25, 25, 25, 0.5);
+  border-radius: 5px;
+  width: 25em;
 }
 </style>
